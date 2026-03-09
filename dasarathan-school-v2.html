@@ -1,0 +1,2289 @@
+<!DOCTYPE html>
+<!-- saved from url=(0059)file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html# -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Dasarathan International School | Inspire · Explore · Excel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link href="./dasarathan-school-v2_files/css2" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════
+   DESIGN TOKENS
+═══════════════════════════════════════════ */
+:root {
+  --ivory:        #f8f4ec;
+  --ivory-dark:   #ede8da;
+  --ivory-mid:    #f2eddf;
+  --lav-pale:     #ede8f4;
+  --lav-soft:     #d8d0ea;
+  --lav-mid:      #bdb0d6;
+  --lav-accent:   #9a89c4;
+  --olive-pale:   #e8ead8;
+  --olive-soft:   #c8cc98;
+  --olive-mid:    #9ea86a;
+  --olive-deep:   #6b7342;
+  --purple-deep:  #3d2d6e;
+  --purple-dark:  #2a1d4e;
+  --purple-rich:  #4e3a8a;
+  --gold:         #c4995a;
+  --gold-pale:    #e8d4a8;
+  --text-dark:    #1e1830;
+  --text-mid:     #4a4260;
+  --text-soft:    #7a6e90;
+  --white:        #ffffff;
+  --shadow-lav:   rgba(61,45,110,.12);
+  --shadow-deep:  rgba(30,24,48,.18);
+  --r-card:       24px;
+  --r-pill:       999px;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;font-size:16px;}
+body{
+  font-family:'Outfit',sans-serif;
+  background:var(--ivory);
+  color:var(--text-dark);
+  overflow-x:hidden;
+  line-height:1.6;
+}
+
+/* ── GRAIN TEXTURE ── */
+body::after{
+  content:'';
+  position:fixed;inset:0;
+  pointer-events:none;
+  z-index:9999;
+  opacity:.025;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ═══════════════════════════════════════════
+   TOP INFO BAR
+═══════════════════════════════════════════ */
+.topbar{
+  background:var(--purple-dark);
+  padding:8px 60px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  font-size:12.5px;
+  color:rgba(255,255,255,.7);
+  letter-spacing:.025em;
+}
+.topbar-left{display:flex;gap:32px;align-items:center;}
+.topbar-item{display:flex;align-items:center;gap:7px;}
+.topbar-item svg{opacity:.6;flex-shrink:0;}
+.topbar-item a{color:rgba(255,255,255,.7);text-decoration:none;transition:color .2s;}
+.topbar-item a:hover{color:var(--gold-pale);}
+.topbar-social{display:flex;gap:10px;}
+.topbar-social a{
+  width:26px;height:26px;
+  border-radius:6px;
+  background:rgba(255,255,255,.08);
+  display:flex;align-items:center;justify-content:center;
+  color:rgba(255,255,255,.6);
+  font-size:12px;
+  text-decoration:none;
+  transition:background .2s,color .2s;
+}
+.topbar-social a:hover{background:var(--lav-accent);color:#fff;}
+
+/* ═══════════════════════════════════════════
+   NAVIGATION
+═══════════════════════════════════════════ */
+nav{
+  position:sticky;
+  top:0;z-index:200;
+  background:rgba(248,244,236,.96);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--ivory-dark);
+  padding:0 60px;
+  transition:box-shadow .3s;
+}
+nav.scrolled{box-shadow:0 4px 32px var(--shadow-lav);}
+
+.nav-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  height:72px;
+}
+
+/* Logo */
+.nav-logo{display:flex;align-items:center;gap:14px;text-decoration:none;}
+.logo-badge{
+  width:48px;height:48px;
+  border-radius:14px;
+  background:linear-gradient(140deg,var(--purple-rich),var(--purple-dark));
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 20px rgba(61,45,110,.35);
+  position:relative;overflow:hidden;
+}
+.logo-badge::after{
+  content:'';
+  position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(255,255,255,.15),transparent 60%);
+}
+.logo-badge-letter{
+  font-family:'Libre Baskerville',serif;
+  font-size:24px;font-weight:700;
+  color:var(--gold-pale);
+  position:relative;z-index:1;
+}
+.logo-text{display:flex;flex-direction:column;line-height:1;}
+.logo-main{
+  font-family:'Libre Baskerville',serif;
+  font-size:15.5px;font-weight:700;
+  color:var(--purple-dark);
+  letter-spacing:.01em;
+}
+.logo-sub{
+  font-size:10px;font-weight:400;
+  color:var(--text-soft);
+  letter-spacing:.12em;text-transform:uppercase;
+  margin-top:3px;
+}
+
+/* Nav links */
+.nav-menu{display:flex;align-items:center;gap:4px;list-style:none;}
+.nav-menu > li{position:relative;}
+.nav-menu > li > a{
+  display:flex;align-items:center;gap:4px;
+  padding:8px 14px;
+  font-size:13.5px;font-weight:500;
+  color:var(--text-mid);
+  text-decoration:none;
+  border-radius:10px;
+  transition:background .2s,color .2s;
+  white-space:nowrap;
+}
+.nav-menu > li > a:hover,
+.nav-menu > li.active > a{
+  background:var(--lav-pale);
+  color:var(--purple-rich);
+}
+.nav-menu > li > a .chevron{
+  width:12px;height:12px;
+  border-right:1.5px solid currentColor;
+  border-bottom:1.5px solid currentColor;
+  transform:rotate(45deg) translateY(-2px);
+  transition:transform .25s;
+}
+.nav-menu > li:hover > a .chevron{transform:rotate(225deg) translateY(-2px);}
+
+/* Dropdown */
+.dropdown{
+  position:absolute;
+  top:calc(100% + 8px);left:0;
+  min-width:220px;
+  background:var(--white);
+  border-radius:16px;
+  border:1px solid var(--lav-soft);
+  box-shadow:0 16px 60px var(--shadow-deep);
+  padding:10px 0;
+  opacity:0;visibility:hidden;
+  transform:translateY(8px);
+  transition:opacity .25s,transform .25s,visibility .25s;
+  pointer-events:none;
+}
+.nav-menu > li:hover .dropdown{
+  opacity:1;visibility:visible;
+  transform:translateY(0);
+  pointer-events:auto;
+}
+.dropdown a{
+  display:block;
+  padding:10px 20px;
+  font-size:13px;font-weight:400;
+  color:var(--text-mid);
+  text-decoration:none;
+  transition:background .2s,color .2s,padding-left .2s;
+}
+.dropdown a:hover{
+  background:var(--lav-pale);
+  color:var(--purple-rich);
+  padding-left:26px;
+}
+
+/* CTA in nav */
+.nav-cta-wrap{margin-left:16px;}
+.btn-nav-cta{
+  background:linear-gradient(135deg,var(--purple-rich),var(--purple-dark));
+  color:#fff !important;
+  padding:10px 22px;
+  border-radius:var(--r-pill);
+  font-size:13px !important;font-weight:600 !important;
+  letter-spacing:.04em;
+  box-shadow:0 4px 20px rgba(61,45,110,.35);
+  transition:transform .2s,box-shadow .2s;
+  white-space:nowrap;
+}
+.btn-nav-cta:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 28px rgba(61,45,110,.45) !important;
+  background:linear-gradient(135deg,var(--purple-rich),var(--purple-dark)) !important;
+}
+
+/* Hamburger */
+.hamburger{
+  display:none;flex-direction:column;gap:5px;
+  cursor:pointer;padding:6px;
+}
+.hamburger span{
+  display:block;width:24px;height:2px;
+  background:var(--text-dark);border-radius:2px;transition:.3s;
+}
+
+/* ═══════════════════════════════════════════
+   HERO SLIDER
+═══════════════════════════════════════════ */
+.hero{
+  position:relative;
+  height:92vh;min-height:580px;max-height:860px;
+  overflow:hidden;
+  background:var(--purple-dark);
+}
+
+.slide{
+  position:absolute;inset:0;
+  display:flex;align-items:center;
+  opacity:0;transition:opacity 1.2s ease;
+  z-index:1;
+}
+.slide.active{opacity:1;z-index:2;}
+
+/* Slide backgrounds – rich gradient composites */
+.slide-1 .slide-bg{
+  background:linear-gradient(125deg,
+    var(--purple-dark) 0%,
+    #3d2560 35%,
+    #5a3a6e 60%,
+    var(--olive-deep) 100%);
+}
+.slide-2 .slide-bg{
+  background:linear-gradient(125deg,
+    #1a2a1e 0%,
+    var(--olive-deep) 40%,
+    #4e3a50 70%,
+    var(--purple-dark) 100%);
+}
+.slide-3 .slide-bg{
+  background:linear-gradient(125deg,
+    #1a1a38 0%,
+    var(--purple-rich) 45%,
+    #3e3060 70%,
+    #2a2010 100%);
+}
+
+.slide-bg{
+  position:absolute;inset:0;
+  transition:transform 8s ease;
+}
+.slide.active .slide-bg{transform:scale(1.04);}
+
+/* Decorative shapes inside slide */
+.slide-shapes{
+  position:absolute;inset:0;overflow:hidden;pointer-events:none;
+}
+.shape-circle{
+  position:absolute;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.06);
+}
+.sc1{width:600px;height:600px;top:-150px;right:-80px;}
+.sc2{width:400px;height:400px;bottom:-100px;left:10%;}
+.sc3{width:250px;height:250px;top:20%;right:25%;border-color:rgba(196,153,90,.1);}
+.shape-ring{
+  position:absolute;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.04);
+}
+.sr1{width:800px;height:800px;top:-200px;right:-200px;}
+.sr2{width:500px;height:500px;bottom:-150px;left:-100px;}
+
+/* Dot grid */
+.slide-dots{
+  position:absolute;inset:0;
+  background-image:radial-gradient(rgba(255,255,255,.07) 1px,transparent 1px);
+  background-size:36px 36px;
+}
+
+.slide-inner{
+  position:relative;z-index:3;
+  max-width:1300px;margin:0 auto;
+  padding:0 80px;
+  width:100%;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:center;
+}
+
+.slide-content{color:#fff;}
+.slide-eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:11px;font-weight:600;
+  letter-spacing:.18em;text-transform:uppercase;
+  color:var(--gold-pale);
+  margin-bottom:22px;
+  opacity:0;transform:translateY(20px);
+  transition:opacity .7s .3s,transform .7s .3s;
+}
+.slide.active .slide-eyebrow{opacity:1;transform:none;}
+.eyebrow-line{width:32px;height:1px;background:var(--gold);}
+
+.slide-title{
+  font-family:'Libre Baskerville',serif;
+  font-size:clamp(36px,4.5vw,62px);
+  font-weight:700;line-height:1.08;
+  margin-bottom:20px;
+  opacity:0;transform:translateY(24px);
+  transition:opacity .7s .45s,transform .7s .45s;
+}
+.slide.active .slide-title{opacity:1;transform:none;}
+.slide-title .italic{font-style:italic;color:var(--gold-pale);}
+
+.slide-text{
+  font-size:16px;font-weight:300;line-height:1.8;
+  color:rgba(255,255,255,.72);
+  max-width:480px;margin-bottom:40px;
+  opacity:0;transform:translateY(20px);
+  transition:opacity .7s .6s,transform .7s .6s;
+}
+.slide.active .slide-text{opacity:1;transform:none;}
+
+.slide-actions{
+  display:flex;gap:16px;align-items:center;
+  opacity:0;transform:translateY(16px);
+  transition:opacity .7s .75s,transform .7s .75s;
+}
+.slide.active .slide-actions{opacity:1;transform:none;}
+
+.btn-hero-primary{
+  background:linear-gradient(135deg,var(--gold),#a87838);
+  color:#fff;
+  padding:14px 34px;border-radius:var(--r-pill);
+  font-size:14px;font-weight:600;letter-spacing:.04em;
+  text-decoration:none;
+  box-shadow:0 8px 32px rgba(196,153,90,.45);
+  transition:transform .25s,box-shadow .25s;
+  display:inline-flex;align-items:center;gap:8px;
+}
+.btn-hero-primary:hover{transform:translateY(-3px);box-shadow:0 14px 40px rgba(196,153,90,.55);}
+
+.btn-hero-ghost{
+  border:1.5px solid rgba(255,255,255,.35);
+  color:rgba(255,255,255,.9);
+  padding:13px 30px;border-radius:var(--r-pill);
+  font-size:14px;font-weight:500;letter-spacing:.04em;
+  text-decoration:none;
+  transition:background .25s,border-color .25s;
+}
+.btn-hero-ghost:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.6);}
+
+/* Hero visual panel */
+.slide-visual{
+  display:flex;justify-content:center;align-items:center;
+  opacity:0;transform:translateX(30px);
+  transition:opacity .9s .5s,transform .9s .5s;
+}
+.slide.active .slide-visual{opacity:1;transform:none;}
+
+.hero-card-stack{position:relative;width:320px;height:400px;}
+.hcard{
+  position:absolute;
+  background:rgba(255,255,255,.09);
+  border:1px solid rgba(255,255,255,.12);
+  backdrop-filter:blur(12px);
+  border-radius:20px;
+  display:flex;align-items:center;justify-content:center;
+  flex-direction:column;gap:8px;
+  text-align:center;
+  padding:24px;color:#fff;
+}
+.hcard-main{
+  width:100%;height:100%;top:0;left:0;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.15);
+}
+.hcard-stat{
+  font-family:'Libre Baskerville',serif;
+  font-size:48px;font-weight:700;
+  line-height:1;color:var(--gold-pale);
+}
+.hcard-label{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.6);}
+.hcard-desc{font-size:14px;color:rgba(255,255,255,.75);font-style:italic;margin-top:4px;}
+
+.hcard-float{
+  width:160px;
+  box-shadow:0 12px 40px rgba(0,0,0,.3);
+}
+.hcard-float-1{
+  bottom:-20px;left:-30px;
+  animation:hfloat1 6s ease-in-out infinite;
+}
+.hcard-float-2{
+  top:-20px;right:-30px;
+  animation:hfloat2 7s ease-in-out infinite;
+}
+@keyframes hfloat1{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes hfloat2{0%,100%{transform:translateY(0)}50%{transform:translateY(10px)}}
+
+/* Slider controls */
+.hero-controls{
+  position:absolute;bottom:36px;left:50%;transform:translateX(-50%);
+  z-index:10;
+  display:flex;align-items:center;gap:12px;
+}
+.hero-dot{
+  width:8px;height:8px;border-radius:50%;
+  background:rgba(255,255,255,.3);
+  cursor:pointer;transition:width .3s,background .3s;
+  border:none;
+}
+.hero-dot.active{width:28px;border-radius:4px;background:var(--gold);}
+
+.hero-arrow{
+  position:absolute;top:50%;transform:translateY(-50%);
+  z-index:10;
+  width:46px;height:46px;border-radius:50%;
+  background:rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.2);
+  backdrop-filter:blur(8px);
+  color:#fff;font-size:18px;
+  cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  transition:background .2s,transform .2s;
+}
+.hero-arrow:hover{background:rgba(255,255,255,.2);transform:translateY(-50%) scale(1.08);}
+.hero-arrow-left{left:32px;}
+.hero-arrow-right{right:32px;}
+
+/* Hero bottom ribbon */
+.hero-ribbon{
+  position:absolute;bottom:0;left:0;right:0;
+  height:72px;
+  background:var(--ivory);
+  clip-path:ellipse(60% 100% at 50% 100%);
+  z-index:5;
+}
+
+/* ═══════════════════════════════════════════
+   STATS BAR
+═══════════════════════════════════════════ */
+.stats-bar{
+  background:var(--white);
+  border-bottom:1px solid var(--ivory-dark);
+  position:relative;z-index:10;
+}
+.stats-inner{
+  max-width:1300px;margin:0 auto;
+  padding:0 60px;
+  display:grid;grid-template-columns:repeat(4,1fr);
+  divide-color:var(--ivory-dark);
+}
+.stat-item{
+  padding:28px 20px;
+  display:flex;align-items:center;gap:16px;
+  border-right:1px solid var(--ivory-dark);
+}
+.stat-item:last-child{border-right:none;}
+.stat-icon{
+  width:50px;height:50px;border-radius:14px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  font-size:22px;
+}
+.si-lav{background:var(--lav-pale);}
+.si-olive{background:var(--olive-pale);}
+.si-gold{background:rgba(196,153,90,.12);}
+.si-purple{background:rgba(61,45,110,.08);}
+.stat-body{}
+.stat-num{
+  font-family:'Libre Baskerville',serif;
+  font-size:28px;font-weight:700;
+  color:var(--purple-dark);
+  line-height:1;
+}
+.stat-label{font-size:12px;color:var(--text-soft);letter-spacing:.05em;margin-top:3px;}
+
+/* ═══════════════════════════════════════════
+   SHARED LAYOUT
+═══════════════════════════════════════════ */
+.container{max-width:1300px;margin:0 auto;padding:0 60px;}
+.section{padding:96px 0;}
+
+.eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--olive-deep);margin-bottom:16px;
+}
+.eyebrow::before{
+  content:'';
+  display:inline-block;width:28px;height:1.5px;
+  background:var(--olive-mid);
+}
+
+.section-title{
+  font-family:'Libre Baskerville',serif;
+  font-size:clamp(32px,3.5vw,50px);
+  font-weight:700;line-height:1.1;
+  color:var(--purple-dark);
+  margin-bottom:16px;
+}
+.section-title em{font-style:italic;color:var(--lav-accent);}
+
+.section-lead{
+  font-size:16px;font-weight:300;line-height:1.85;
+  color:var(--text-mid);max-width:560px;
+}
+
+/* ═══════════════════════════════════════════
+   MARQUEE
+═══════════════════════════════════════════ */
+.marquee-wrap{
+  background:linear-gradient(90deg,var(--olive-deep),var(--olive-mid) 50%,var(--olive-deep));
+  padding:14px 0;overflow:hidden;
+}
+.marquee-track{
+  display:flex;gap:0;
+  animation:marquee-scroll 28s linear infinite;
+  white-space:nowrap;
+}
+.marquee-track:hover{animation-play-state:paused;}
+.mq-item{
+  flex-shrink:0;
+  padding:0 36px;
+  font-size:13px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;
+  color:rgba(255,255,255,.85);
+  display:flex;align-items:center;gap:20px;
+}
+.mq-item::after{content:'✦';font-size:9px;color:rgba(255,255,255,.4);}
+@keyframes marquee-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ═══════════════════════════════════════════
+   WELCOME / ABOUT
+═══════════════════════════════════════════ */
+.welcome{background:var(--ivory);}
+.welcome-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:80px;align-items:center;
+}
+
+/* Image collage */
+.welcome-collage{
+  position:relative;height:540px;
+}
+.wc-img{
+  position:absolute;border-radius:20px;overflow:hidden;
+  box-shadow:0 16px 60px var(--shadow-lav);
+  transition:transform .4s,box-shadow .4s;
+}
+.wc-img:hover{transform:translateY(-6px);box-shadow:0 28px 72px var(--shadow-deep);}
+.wc-img .ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:60px;}
+
+.wc-main{width:320px;height:400px;top:60px;left:0;}
+.wc-top{width:200px;height:200px;top:0;right:0;}
+.wc-bot{width:210px;height:200px;bottom:0;right:30px;}
+
+.ph-a{background:linear-gradient(145deg,#c8bfe0,#a090c8);}
+.ph-b{background:linear-gradient(145deg,#d4e0c8,#a8c098);}
+.ph-c{background:linear-gradient(145deg,#e8d5c0,#c4a88a);}
+.ph-d{background:linear-gradient(145deg,#b8d0e0,#88b0c8);}
+
+.wc-badge{
+  position:absolute;
+  bottom:40px;left:200px;
+  background:var(--purple-dark);
+  color:#fff;
+  border-radius:16px;
+  padding:18px 22px;
+  box-shadow:0 12px 40px rgba(30,24,48,.3);
+  text-align:center;
+  z-index:5;
+  animation:hfloat1 5s ease-in-out infinite;
+}
+.wc-badge-num{
+  font-family:'Libre Baskerville',serif;
+  font-size:32px;font-weight:700;
+  color:var(--gold-pale);line-height:1;
+}
+.wc-badge-txt{font-size:11px;color:rgba(255,255,255,.65);letter-spacing:.06em;margin-top:4px;}
+
+/* Olive accent strip */
+.olive-strip{
+  display:inline-flex;align-items:center;gap:12px;
+  background:var(--olive-pale);
+  border-radius:10px;
+  padding:12px 18px;
+  margin-bottom:32px;
+}
+.olive-strip-dot{
+  width:8px;height:8px;border-radius:50%;
+  background:var(--olive-deep);
+  animation:pulse-dot 2s ease-in-out infinite;
+}
+@keyframes pulse-dot{0%,100%{transform:scale(1)}50%{transform:scale(1.4)}}
+.olive-strip-text{font-size:12px;font-weight:600;color:var(--olive-deep);letter-spacing:.08em;text-transform:uppercase;}
+
+.welcome-body{}
+.credo{
+  font-family:'Pinyon Script',cursive;
+  font-size:36px;color:var(--lav-accent);
+  margin:20px 0 28px;line-height:1.2;
+}
+.welcome-text{
+  font-size:15px;line-height:1.9;color:var(--text-mid);
+  margin-bottom:36px;
+}
+.value-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:16px;margin-bottom:40px;
+}
+.value-card{
+  background:var(--white);
+  border:1px solid var(--ivory-dark);
+  border-radius:16px;padding:20px;
+  transition:border-color .25s,transform .25s,box-shadow .25s;
+}
+.value-card:hover{
+  border-color:var(--lav-soft);
+  transform:translateY(-3px);
+  box-shadow:0 8px 32px var(--shadow-lav);
+}
+.value-icon{font-size:24px;margin-bottom:8px;}
+.value-name{font-size:14px;font-weight:600;color:var(--purple-dark);margin-bottom:4px;}
+.value-desc{font-size:12px;color:var(--text-soft);line-height:1.6;}
+
+.btn-primary{
+  display:inline-flex;align-items:center;gap:8px;
+  background:linear-gradient(135deg,var(--purple-rich),var(--purple-dark));
+  color:#fff;padding:14px 32px;border-radius:var(--r-pill);
+  font-size:14px;font-weight:600;letter-spacing:.04em;text-decoration:none;
+  box-shadow:0 6px 28px var(--shadow-lav);
+  transition:transform .25s,box-shadow .25s;
+}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 12px 40px var(--shadow-deep);}
+
+.btn-outline{
+  display:inline-flex;align-items:center;gap:8px;
+  border:1.5px solid var(--purple-rich);color:var(--purple-rich);
+  padding:13px 28px;border-radius:var(--r-pill);
+  font-size:14px;font-weight:500;letter-spacing:.04em;text-decoration:none;
+  transition:background .25s,color .25s;
+}
+.btn-outline:hover{background:var(--purple-rich);color:#fff;}
+
+/* ═══════════════════════════════════════════
+   ANNOUNCEMENTS + EVENTS + CIRCULARS
+═══════════════════════════════════════════ */
+.updates{
+  background:linear-gradient(170deg,var(--lav-pale) 0%,var(--ivory) 100%);
+  padding:80px 0;
+}
+.updates-grid{
+  display:grid;grid-template-columns:1fr 1fr 1fr;
+  gap:28px;margin-top:52px;
+}
+
+.update-panel{
+  background:var(--white);
+  border-radius:var(--r-card);
+  overflow:hidden;
+  border:1px solid var(--lav-soft);
+  box-shadow:0 4px 24px var(--shadow-lav);
+}
+.update-head{
+  padding:20px 24px;
+  display:flex;align-items:center;gap:12px;
+  border-bottom:1px solid var(--ivory-dark);
+}
+.update-head-icon{
+  width:40px;height:40px;border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;flex-shrink:0;
+}
+.uhi-purple{background:rgba(61,45,110,.08);}
+.uhi-olive{background:var(--olive-pale);}
+.uhi-lav{background:var(--lav-pale);}
+.update-head-title{font-size:15px;font-weight:600;color:var(--purple-dark);}
+.update-body{padding:8px 0 16px;}
+
+/* Announcements */
+.ann-item{
+  padding:14px 24px;
+  border-bottom:1px solid var(--ivory-mid);
+  display:flex;align-items:flex-start;gap:12px;
+  transition:background .2s;cursor:pointer;
+}
+.ann-item:last-child{border-bottom:none;}
+.ann-item:hover{background:var(--lav-pale);}
+.ann-dot{
+  width:8px;height:8px;border-radius:50%;
+  background:var(--olive-mid);flex-shrink:0;margin-top:6px;
+}
+.ann-text{font-size:13.5px;color:var(--text-mid);line-height:1.5;}
+.ann-badge{
+  display:inline-block;
+  background:var(--olive-pale);color:var(--olive-deep);
+  font-size:10px;font-weight:600;letter-spacing:.06em;
+  padding:2px 8px;border-radius:var(--r-pill);margin-top:4px;
+}
+
+/* Events */
+.event-item{
+  padding:14px 24px;
+  display:flex;gap:14px;align-items:flex-start;
+  border-bottom:1px solid var(--ivory-mid);
+  transition:background .2s;cursor:pointer;
+}
+.event-item:last-child{border-bottom:none;}
+.event-item:hover{background:var(--lav-pale);}
+.event-thumb{
+  width:60px;height:60px;border-radius:12px;
+  overflow:hidden;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  font-size:28px;
+}
+.event-info{}
+.event-name{font-size:13.5px;font-weight:600;color:var(--text-dark);margin-bottom:3px;}
+.event-date{font-size:12px;color:var(--text-soft);}
+
+/* Circulars */
+.circ-item{
+  padding:12px 24px;
+  display:flex;align-items:center;gap:12px;
+  border-bottom:1px solid var(--ivory-mid);
+  transition:background .2s;cursor:pointer;
+  text-decoration:none;
+}
+.circ-item:last-child{border-bottom:none;}
+.circ-item:hover{background:var(--lav-pale);}
+.circ-icon{
+  width:32px;height:32px;border-radius:8px;
+  background:var(--lav-pale);
+  display:flex;align-items:center;justify-content:center;
+  font-size:15px;flex-shrink:0;
+}
+.circ-text{font-size:13px;color:var(--text-mid);line-height:1.4;}
+
+.update-foot{
+  padding:14px 24px;
+  border-top:1px solid var(--ivory-dark);
+}
+.view-all-link{
+  font-size:13px;font-weight:600;
+  color:var(--purple-rich);text-decoration:none;
+  display:inline-flex;align-items:center;gap:6px;
+  transition:gap .2s;
+}
+.view-all-link:hover{gap:10px;}
+
+/* ═══════════════════════════════════════════
+   ACADEMICS / PROGRAMMES
+═══════════════════════════════════════════ */
+.academics{background:var(--ivory);}
+.academics-header{
+  display:flex;align-items:flex-end;justify-content:space-between;
+  margin-bottom:52px;
+}
+.prog-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+.prog-card{
+  border-radius:var(--r-card);overflow:hidden;
+  position:relative;cursor:pointer;
+  transition:transform .35s,box-shadow .35s;
+  height:340px;
+  display:flex;flex-direction:column;justify-content:flex-end;
+}
+.prog-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 24px 60px var(--shadow-deep);
+}
+.prog-card-bg{
+  position:absolute;inset:0;transition:transform .5s;
+}
+.prog-card:hover .prog-card-bg{transform:scale(1.06);}
+.pc-bg-1{background:linear-gradient(160deg,#d8d0ec,#a090c8);}
+.pc-bg-2{background:linear-gradient(160deg,#c8e0d0,#88b8a0);}
+.pc-bg-3{background:linear-gradient(160deg,#e8d8c0,#c0a070);}
+.pc-bg-4{background:linear-gradient(160deg,#c8d8e8,#8098b8);}
+
+.prog-card-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(30,24,48,.85) 0%,rgba(30,24,48,.1) 60%,transparent 100%);
+}
+.prog-card-content{
+  position:relative;z-index:2;
+  padding:28px;color:#fff;
+}
+.prog-icon{font-size:36px;margin-bottom:10px;}
+.prog-age{
+  font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--gold-pale);margin-bottom:6px;
+}
+.prog-name{
+  font-family:'Libre Baskerville',serif;
+  font-size:20px;font-weight:700;line-height:1.2;
+  margin-bottom:8px;
+}
+.prog-desc{font-size:13px;color:rgba(255,255,255,.75);line-height:1.6;}
+.prog-arrow{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:12px;font-weight:600;letter-spacing:.06em;
+  color:var(--gold-pale);margin-top:14px;
+  opacity:0;transform:translateY(8px);
+  transition:opacity .3s,transform .3s;
+}
+.prog-card:hover .prog-arrow{opacity:1;transform:none;}
+
+/* ═══════════════════════════════════════════
+   CO-CURRICULARS
+═══════════════════════════════════════════ */
+.cocurr{background:var(--lav-pale);}
+.cocurr-intro{
+  max-width:600px;margin-bottom:52px;
+}
+.activity-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+.activity-card{
+  background:var(--white);
+  border-radius:var(--r-card);
+  padding:36px 30px;
+  border:1px solid var(--lav-soft);
+  transition:transform .3s,box-shadow .3s,border-color .3s;
+  cursor:pointer;
+}
+.activity-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 18px 50px var(--shadow-lav);
+  border-color:var(--lav-mid);
+}
+.ac-icon-wrap{
+  width:60px;height:60px;border-radius:18px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:28px;margin-bottom:24px;
+}
+.aci-lav{background:var(--lav-pale);}
+.aci-olive{background:var(--olive-pale);}
+.aci-gold{background:rgba(196,153,90,.12);}
+.ac-title{
+  font-family:'Libre Baskerville',serif;
+  font-size:18px;font-weight:700;
+  color:var(--purple-dark);margin-bottom:10px;
+}
+.ac-desc{font-size:13.5px;color:var(--text-soft);line-height:1.7;}
+.ac-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;}
+.ac-tag{
+  font-size:11px;font-weight:500;letter-spacing:.05em;
+  background:var(--lav-pale);color:var(--lav-accent);
+  padding:4px 12px;border-radius:var(--r-pill);
+}
+.aci-olive ~ .ac-tags .ac-tag{background:var(--olive-pale);color:var(--olive-deep);}
+
+/* ═══════════════════════════════════════════
+   FACILITIES
+═══════════════════════════════════════════ */
+.facilities{background:var(--ivory);}
+.facilities-lead{margin-bottom:52px;}
+.fac-mosaic{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  grid-template-rows:200px 200px;
+  gap:16px;
+}
+.fac-tile{
+  border-radius:20px;overflow:hidden;position:relative;
+  cursor:pointer;
+}
+.fac-tile.wide{grid-column:span 2;}
+.fac-tile.tall{grid-row:span 2;}
+.fac-tile-bg{
+  width:100%;height:100%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:52px;
+  transition:transform .5s;
+}
+.fac-tile:hover .fac-tile-bg{transform:scale(1.07);}
+.fac-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(30,24,48,.7),transparent 55%);
+  display:flex;align-items:flex-end;
+  padding:20px;
+  opacity:0;transition:opacity .3s;
+}
+.fac-tile:hover .fac-overlay{opacity:1;}
+.fac-label{
+  font-family:'Libre Baskerville',serif;
+  font-size:16px;font-weight:700;color:#fff;
+}
+
+.ftbg1{background:linear-gradient(135deg,#c5b8de,#a090c8);}
+.ftbg2{background:linear-gradient(135deg,#c8e0cc,#90c0a0);}
+.ftbg3{background:linear-gradient(135deg,#e8d0b0,#c0a070);}
+.ftbg4{background:linear-gradient(135deg,#b8cce0,#80a0c8);}
+.ftbg5{background:linear-gradient(135deg,#d8cce8,#b0a0d0);}
+.ftbg6{background:linear-gradient(135deg,#cce8d8,#90c8b0);}
+.ftbg7{background:linear-gradient(135deg,#e8e0c0,#c8b888);}
+
+/* ═══════════════════════════════════════════
+   MESSAGES
+═══════════════════════════════════════════ */
+.messages{
+  background:linear-gradient(170deg,var(--purple-dark) 0%,#2a2050 100%);
+  position:relative;overflow:hidden;
+}
+.messages::before{
+  content:'';position:absolute;inset:0;
+  background-image:radial-gradient(rgba(255,255,255,.03) 1px,transparent 1px);
+  background-size:40px 40px;
+}
+.msg-orb{
+  position:absolute;border-radius:50%;pointer-events:none;
+}
+.mo1{
+  width:500px;height:500px;right:-150px;top:-150px;
+  background:radial-gradient(circle,rgba(154,137,196,.12),transparent 70%);
+}
+.mo2{
+  width:350px;height:350px;left:-80px;bottom:-80px;
+  background:radial-gradient(circle,rgba(110,115,66,.15),transparent 70%);
+}
+
+.msg-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:24px;position:relative;z-index:2;
+}
+.msg-card{
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.1);
+  backdrop-filter:blur(10px);
+  border-radius:var(--r-card);
+  padding:40px 32px;
+  transition:background .3s,transform .3s;
+}
+.msg-card:hover{
+  background:rgba(255,255,255,.1);
+  transform:translateY(-6px);
+}
+.msg-avatar{
+  width:72px;height:72px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:30px;
+  margin-bottom:20px;
+  border:2px solid rgba(255,255,255,.15);
+}
+.ma-gold{background:rgba(196,153,90,.2);}
+.ma-lav{background:rgba(154,137,196,.2);}
+.ma-olive{background:rgba(110,115,66,.2);}
+.msg-role{
+  font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--gold-pale);margin-bottom:6px;
+}
+.msg-name{
+  font-family:'Libre Baskerville',serif;
+  font-size:20px;font-weight:700;color:#fff;
+  margin-bottom:18px;
+}
+.msg-quote{
+  font-family:'Libre Baskerville',serif;
+  font-size:15px;font-style:italic;line-height:1.75;
+  color:rgba(255,255,255,.7);
+  position:relative;padding-left:18px;
+}
+.msg-quote::before{
+  content:'"';
+  position:absolute;left:0;top:-4px;
+  font-size:32px;line-height:1;
+  color:var(--gold);opacity:.6;
+}
+.msg-readmore{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:12px;font-weight:600;letter-spacing:.06em;
+  color:var(--gold-pale);text-decoration:none;
+  margin-top:20px;transition:gap .2s;
+}
+.msg-readmore:hover{gap:10px;}
+
+/* ═══════════════════════════════════════════
+   TESTIMONIALS
+═══════════════════════════════════════════ */
+.testimonials{background:var(--ivory-mid);}
+.testi-scroll{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:24px;margin-top:52px;
+}
+.testi-card{
+  background:var(--white);
+  border-radius:var(--r-card);padding:36px 30px;
+  border:1px solid var(--ivory-dark);
+  transition:transform .3s,box-shadow .3s;
+  position:relative;
+}
+.testi-card:hover{transform:translateY(-6px);box-shadow:0 20px 52px var(--shadow-lav);}
+.testi-mark{
+  font-family:'Libre Baskerville',serif;
+  font-size:72px;line-height:.7;
+  color:var(--lav-soft);margin-bottom:16px;display:block;
+}
+.testi-text{
+  font-family:'Libre Baskerville',serif;
+  font-size:16px;font-style:italic;
+  line-height:1.75;color:var(--text-mid);
+  margin-bottom:28px;
+}
+.testi-author{display:flex;align-items:center;gap:14px;}
+.tav{
+  width:48px;height:48px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:20px;flex-shrink:0;
+}
+.tav-a{background:var(--lav-pale);}
+.tav-b{background:var(--olive-pale);}
+.tav-c{background:rgba(196,153,90,.12);}
+.t-name{font-size:14px;font-weight:600;color:var(--text-dark);}
+.t-role{font-size:12px;color:var(--text-soft);}
+.testi-stars{color:var(--gold);font-size:13px;letter-spacing:2px;margin-bottom:14px;}
+
+/* ═══════════════════════════════════════════
+   ADMISSIONS CTA
+═══════════════════════════════════════════ */
+.admissions-cta{
+  background:var(--olive-deep);
+  position:relative;overflow:hidden;
+}
+.admissions-cta::before{
+  content:'';position:absolute;inset:0;
+  background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+.admissions-inner{
+  max-width:1300px;margin:0 auto;padding:80px 60px;
+  display:grid;grid-template-columns:1fr auto;
+  align-items:center;gap:60px;
+  position:relative;z-index:2;
+}
+.adm-eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;
+  color:rgba(255,255,255,.6);margin-bottom:16px;
+}
+.adm-eyebrow::before{
+  content:'';width:24px;height:1px;background:rgba(255,255,255,.4);
+}
+.adm-title{
+  font-family:'Libre Baskerville',serif;
+  font-size:clamp(32px,3.5vw,48px);
+  font-weight:700;color:#fff;line-height:1.12;
+  margin-bottom:16px;
+}
+.adm-title em{font-style:italic;color:var(--gold-pale);}
+.adm-desc{font-size:15px;color:rgba(255,255,255,.7);line-height:1.8;max-width:480px;}
+.adm-actions{
+  display:flex;flex-direction:column;gap:14px;flex-shrink:0;
+}
+.btn-gold{
+  background:linear-gradient(135deg,var(--gold),#9a6e30);
+  color:#fff;padding:16px 40px;border-radius:var(--r-pill);
+  font-size:14px;font-weight:600;letter-spacing:.05em;
+  text-decoration:none;text-align:center;white-space:nowrap;
+  box-shadow:0 8px 32px rgba(196,153,90,.45);
+  transition:transform .25s,box-shadow .25s;
+}
+.btn-gold:hover{transform:translateY(-3px);box-shadow:0 14px 40px rgba(196,153,90,.55);}
+.btn-white-out{
+  border:1.5px solid rgba(255,255,255,.4);color:#fff;
+  padding:14px 36px;border-radius:var(--r-pill);
+  font-size:14px;font-weight:500;letter-spacing:.05em;
+  text-decoration:none;text-align:center;
+  transition:background .25s,border-color .25s;
+}
+.btn-white-out:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.7);}
+
+/* ═══════════════════════════════════════════
+   BLOG / RECENT POSTS
+═══════════════════════════════════════════ */
+.blog{background:var(--ivory);}
+.blog-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:52px;}
+.blog-grid{
+  display:grid;grid-template-columns:2fr 1fr 1fr;
+  gap:24px;
+}
+.blog-card{
+  border-radius:var(--r-card);overflow:hidden;
+  background:var(--white);
+  border:1px solid var(--ivory-dark);
+  cursor:pointer;
+  transition:transform .3s,box-shadow .3s;
+}
+.blog-card:hover{transform:translateY(-6px);box-shadow:0 20px 52px var(--shadow-lav);}
+.blog-thumb{overflow:hidden;}
+.blog-thumb .ph{transition:transform .5s;}
+.blog-card:hover .blog-thumb .ph{transform:scale(1.05);}
+.bt-main{height:240px;}
+.bt-sm{height:180px;}
+.blog-body{padding:24px 26px 28px;}
+.blog-cat{
+  font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--olive-deep);margin-bottom:8px;
+}
+.blog-title{
+  font-family:'Libre Baskerville',serif;
+  font-size:18px;font-weight:700;color:var(--text-dark);
+  line-height:1.3;margin-bottom:10px;
+}
+.blog-card.featured .blog-title{font-size:22px;}
+.blog-excerpt{font-size:13.5px;color:var(--text-soft);line-height:1.65;}
+.blog-meta{display:flex;align-items:center;gap:16px;margin-top:16px;}
+.blog-date{font-size:12px;color:var(--text-soft);}
+.blog-tag{
+  font-size:11px;font-weight:600;
+  background:var(--lav-pale);color:var(--lav-accent);
+  padding:3px 10px;border-radius:var(--r-pill);
+}
+
+/* ═══════════════════════════════════════════
+   CONTACT / MAP
+═══════════════════════════════════════════ */
+.contact{background:var(--lav-pale);}
+.contact-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:60px;align-items:start;
+}
+.contact-info{}
+.contact-cards{display:flex;flex-direction:column;gap:16px;margin-top:36px;}
+.contact-card{
+  background:var(--white);border-radius:16px;padding:22px 24px;
+  display:flex;align-items:flex-start;gap:16px;
+  border:1px solid var(--lav-soft);
+  transition:transform .25s,box-shadow .25s;
+}
+.contact-card:hover{transform:translateY(-3px);box-shadow:0 8px 32px var(--shadow-lav);}
+.cc-icon{
+  width:44px;height:44px;border-radius:12px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;font-size:20px;
+}
+.cc-purple{background:rgba(61,45,110,.08);}
+.cc-olive{background:var(--olive-pale);}
+.cc-lav{background:var(--lav-pale);}
+.cc-label{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--text-soft);margin-bottom:4px;}
+.cc-value{font-size:14px;font-weight:500;color:var(--text-dark);line-height:1.5;}
+.cc-value a{color:var(--purple-rich);text-decoration:none;}
+.cc-value a:hover{text-decoration:underline;}
+
+.map-panel{
+  background:var(--white);
+  border-radius:var(--r-card);overflow:hidden;
+  border:1px solid var(--lav-soft);
+  box-shadow:0 8px 40px var(--shadow-lav);
+}
+.map-placeholder{
+  height:320px;
+  background:linear-gradient(145deg,var(--lav-pale),var(--olive-pale));
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:12px;
+}
+.map-placeholder-icon{font-size:52px;}
+.map-placeholder-text{
+  font-family:'Libre Baskerville',serif;
+  font-size:16px;color:var(--text-mid);font-style:italic;
+}
+.map-footer{padding:20px 24px;display:flex;align-items:center;justify-content:space-between;}
+.map-address{font-size:13px;color:var(--text-soft);line-height:1.6;}
+.btn-directions{
+  background:var(--purple-dark);color:#fff;
+  padding:10px 22px;border-radius:var(--r-pill);
+  font-size:13px;font-weight:600;letter-spacing:.04em;
+  text-decoration:none;white-space:nowrap;flex-shrink:0;
+  transition:transform .2s;
+}
+.btn-directions:hover{transform:translateY(-2px);}
+
+/* ═══════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════ */
+footer{background:var(--text-dark);}
+.footer-top{
+  max-width:1300px;margin:0 auto;padding:72px 60px 52px;
+  display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;
+  gap:52px;border-bottom:1px solid rgba(255,255,255,.08);
+}
+.footer-brand{}
+.footer-logo-name{
+  font-family:'Libre Baskerville',serif;
+  font-size:18px;font-weight:700;color:#fff;margin-bottom:12px;
+}
+.footer-brand-desc{
+  font-size:13.5px;line-height:1.8;color:rgba(255,255,255,.55);
+  max-width:300px;margin-bottom:28px;
+}
+.footer-tagline{
+  font-family:'Pinyon Script',cursive;
+  font-size:26px;color:var(--gold);
+  margin-bottom:24px;display:block;
+}
+.footer-social{display:flex;gap:10px;}
+.fsoc{
+  width:36px;height:36px;border-radius:10px;
+  background:rgba(255,255,255,.07);
+  display:flex;align-items:center;justify-content:center;
+  color:rgba(255,255,255,.55);font-size:14px;
+  text-decoration:none;transition:background .2s,color .2s,transform .2s;
+}
+.fsoc:hover{background:var(--lav-accent);color:#fff;transform:translateY(-2px);}
+
+.footer-col h5{
+  font-family:'Libre Baskerville',serif;
+  font-size:15px;font-weight:700;color:#fff;margin-bottom:18px;
+}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.footer-col ul li a{
+  font-size:13px;color:rgba(255,255,255,.5);
+  text-decoration:none;transition:color .2s,padding-left .2s;
+  display:block;
+}
+.footer-col ul li a:hover{color:var(--lav-mid);padding-left:4px;}
+
+.footer-bottom{
+  max-width:1300px;margin:0 auto;
+  padding:24px 60px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.footer-copy{font-size:12.5px;color:rgba(255,255,255,.35);}
+.footer-links{display:flex;gap:24px;}
+.footer-links a{font-size:12.5px;color:rgba(255,255,255,.35);text-decoration:none;transition:color .2s;}
+.footer-links a:hover{color:rgba(255,255,255,.65);}
+
+/* ═══════════════════════════════════════════
+   SCROLL REVEAL
+═══════════════════════════════════════════ */
+.reveal{opacity:0;transform:translateY(32px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.visible{opacity:1;transform:none;}
+.rd1{transition-delay:.1s;}
+.rd2{transition-delay:.2s;}
+.rd3{transition-delay:.3s;}
+.rd4{transition-delay:.4s;}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════ */
+@media(max-width:1100px){
+  nav,footer .footer-top,footer .footer-bottom,
+  .container,.stats-inner,.admissions-inner{padding-left:32px;padding-right:32px;}
+  .topbar{padding:8px 32px;}
+  .slide-inner{padding:0 40px;}
+  .prog-grid{grid-template-columns:repeat(2,1fr);}
+  .msg-grid{grid-template-columns:1fr 1fr;}
+  .footer-top{grid-template-columns:1fr 1fr;gap:36px;}
+}
+@media(max-width:768px){
+  .topbar{display:none;}
+  .nav-menu{display:none;}
+  .hamburger{display:flex;}
+  .slide-inner{grid-template-columns:1fr;}
+  .slide-visual{display:none;}
+  .stats-inner{grid-template-columns:1fr 1fr;}
+  .stat-item{border-right:none;border-bottom:1px solid var(--ivory-dark);}
+  .welcome-grid{grid-template-columns:1fr;}
+  .welcome-collage{display:none;}
+  .updates-grid{grid-template-columns:1fr;}
+  .activity-grid{grid-template-columns:1fr 1fr;}
+  .fac-mosaic{grid-template-columns:1fr 1fr;grid-template-rows:auto;}
+  .fac-tile.wide,.fac-tile.tall{grid-column:auto;grid-row:auto;}
+  .msg-grid{grid-template-columns:1fr;}
+  .testi-scroll{grid-template-columns:1fr;}
+  .admissions-inner{grid-template-columns:1fr;}
+  .blog-grid{grid-template-columns:1fr;}
+  .contact-grid{grid-template-columns:1fr;}
+  .footer-top{grid-template-columns:1fr;}
+  .footer-bottom{flex-direction:column;gap:12px;text-align:center;}
+  .prog-grid{grid-template-columns:1fr 1fr;}
+  .academics-header{flex-direction:column;align-items:flex-start;gap:16px;}
+  .blog-header{flex-direction:column;align-items:flex-start;gap:16px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ░░░ TOP INFO BAR ░░░ -->
+<div class="topbar">
+  <div class="topbar-left">
+    <div class="topbar-item">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 .82h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"></path></svg>
+      <a href="tel:+919489663338">+91 9489663338</a>
+    </div>
+    <div class="topbar-item">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+      <a href="mailto:drdasarathanintschool@gmail.com">drdasarathanintschool@gmail.com</a>
+    </div>
+    <div class="topbar-item">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+      <span>Jangamanaicken Palayam, Thoppampatti Pirivu, Coimbatore – 641017</span>
+    </div>
+  </div>
+  <div class="topbar-social">
+    <a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#" title="Facebook">f</a>
+    <a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#" title="Instagram">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="5"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor"></circle></svg>
+    </a>
+    <a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#" title="YouTube">▶</a>
+  </div>
+</div>
+
+<!-- ░░░ NAVIGATION ░░░ -->
+<nav id="mainNav" class="scrolled">
+  <div class="nav-inner">
+    <a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#" class="nav-logo">
+      <img src="./dasarathan-school-v2_files/logo.png" width="46" height="34">
+      <div class="logo-text">
+        <span class="logo-main">Dr. Dasarathan International School</span>
+        
+      </div>
+    </a>
+    <ul class="nav-menu">
+      <li class="active"><a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#">Home</a></li>
+      <li>
+        <a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#about">About Us <span class="chevron"></span></a>
+        <div class="dropdown">
+          <a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#about">About Us</a>
+          <a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#vision">Vision &amp; Mission</a>
+          <a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#management">Management</a>
+          <a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#messages">Management Message</a>
+          <a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#messages">Correspondent Message</a>
+          <a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#messages">Principal Message</a>
+          <a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#testimonials">Testimonials</a>
+          <a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#events">Events</a>
+        </div>
+      </li>
+      <li><a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#admissions" style="color:var(--olive-deep);font-weight:600;">Admission 2025–26</a></li>
+      <li>
+        <a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#academics">Academic <span class="chevron"></span></a>
+        <div class="dropdown">
+          <a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#academics">Academic Overview</a>
+          <a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#">Circular</a>
+          <a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#">Examination Dates</a>
+          <a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#">List of Holidays</a>
+        </div>
+      </li>
+      <li><a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#cocurr">Co-Curricular</a></li>
+      <li><a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#facilities">Facilities</a></li>
+      <li><a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#blog">Blog</a></li>
+      <li><a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#contact">Contact Us</a></li>
+    </ul>
+    <div class="nav-cta-wrap">
+      <a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#admissions" class="nav-menu" style="list-style:none">
+        </a><li><a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#admissions" class="nav-menu" style="list-style:none"></a><a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#admissions" class="btn-nav-cta">Apply Now</a></li>
+      
+    </div>
+    <div class="hamburger" id="burger" onclick="toggleBurger()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- ░░░ HERO SLIDER ░░░ -->
+<section class="hero" id="hero">
+
+  <!-- Slide 1 -->
+  <div class="slide slide-1">
+    <div class="slide-bg slide-1"></div>
+    <div class="slide-shapes">
+      <div class="shape-circle sc1"></div>
+      <div class="shape-circle sc2"></div>
+      <div class="shape-circle sc3"></div>
+      <div class="shape-ring sr1"></div>
+      <div class="shape-ring sr2"></div>
+      <div class="slide-dots"></div>
+    </div>
+    <div class="slide-inner">
+      <div class="slide-content">
+        <div class="slide-eyebrow"><span class="eyebrow-line"></span>Welcome to Dr. DIS</div>
+        <h1 class="slide-title">Where Every Child<br><span class="italic">Inspires,</span> Explores<br>&amp; Excels</h1>
+        <p class="slide-text">A world-class learning sanctuary in Coimbatore, nurturing curious minds and compassionate hearts through joyful, research-based education since 1997.</p>
+        <div class="slide-actions">
+          <a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#admissions" class="btn-hero-primary">
+            Apply for 2025–26
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+          </a>
+          <a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#about" class="btn-hero-ghost">Discover More</a>
+        </div>
+      </div>
+      <div class="slide-visual">
+        <div class="hero-card-stack">
+          <div class="hcard hcard-main">
+            <div style="font-size:52px;margin-bottom:8px;">🎓</div>
+            <div class="hcard-stat">15+</div>
+            <div class="hcard-label">Years of Excellence</div>
+            <div class="hcard-desc">"Shaping futures with purpose"</div>
+          </div>
+          <div class="hcard hcard-float hcard-float-1">
+            <div class="fc-icon" style="font-size:22px;">🏆</div>
+            <div class="hcard-stat" style="font-size:22px;">100%</div>
+            <div class="hcard-label" style="font-size:10px;">Board Pass Rate</div>
+          </div>
+          <div class="hcard hcard-float hcard-float-2">
+            <div style="font-size:22px;">👩‍🎓</div>
+            <div class="hcard-stat" style="font-size:22px;">1,500+</div>
+            <div class="hcard-label" style="font-size:10px;">Students Enrolled</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 2 -->
+  <div class="slide slide-2 active">
+    <div class="slide-bg slide-2"></div>
+    <div class="slide-shapes">
+      <div class="shape-circle sc1"></div><div class="shape-circle sc2"></div>
+      <div class="slide-dots"></div>
+    </div>
+    <div class="slide-inner">
+      <div class="slide-content">
+        <div class="slide-eyebrow"><span class="eyebrow-line"></span>Holistic Education</div>
+        <h1 class="slide-title">A Vibrant Campus<br>of <span class="italic">Discovery</span><br>&amp; Growth</h1>
+        <p class="slide-text">From smart classrooms and science labs to sports arenas and creative arts studios — every corner of our campus is designed to spark imagination.</p>
+        <div class="slide-actions">
+          <a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#facilities" class="btn-hero-primary">
+            Explore Facilities
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+          </a>
+          <a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#cocurr" class="btn-hero-ghost">Co-Curriculars</a>
+        </div>
+      </div>
+      <div class="slide-visual">
+        <div class="hero-card-stack">
+          <div class="hcard hcard-main">
+            <div style="font-size:52px;margin-bottom:8px;">🌱</div>
+            <div class="hcard-stat">15+</div>
+            <div class="hcard-label">Activity Clubs</div>
+            <div class="hcard-desc">"Beyond the classroom"</div>
+          </div>
+          <div class="hcard hcard-float hcard-float-1">
+            <div style="font-size:22px;">⚽</div>
+            <div class="hcard-stat" style="font-size:22px;">20+</div>
+            <div class="hcard-label" style="font-size:10px;">Sports Programs</div>
+          </div>
+          <div class="hcard hcard-float hcard-float-2">
+            <div style="font-size:22px;">🎨</div>
+            <div class="hcard-stat" style="font-size:22px;">Arts</div>
+            <div class="hcard-label" style="font-size:10px;">&amp; Culture Hub</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 3 -->
+  <div class="slide slide-3">
+    <div class="slide-bg slide-3"></div>
+    <div class="slide-shapes">
+      <div class="shape-circle sc1"></div><div class="shape-circle sc2"></div>
+      <div class="slide-dots"></div>
+    </div>
+    <div class="slide-inner">
+      <div class="slide-content">
+        <div class="slide-eyebrow"><span class="eyebrow-line"></span>Admissions Open</div>
+        <h1 class="slide-title">Your Child's<br><span class="italic">Extraordinary</span><br>Journey Begins Here</h1>
+        <p class="slide-text">Seats are filling fast for 2025–26. Join a community where every student is known, valued, and empowered to reach their fullest potential.</p>
+        <div class="slide-actions">
+          <a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#admissions" class="btn-hero-primary">
+            Enroll Today
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+          </a>
+          <a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#contact" class="btn-hero-ghost">Book a School Tour</a>
+        </div>
+      </div>
+      <div class="slide-visual">
+        <div class="hero-card-stack">
+          <div class="hcard hcard-main">
+            <div style="font-size:52px;margin-bottom:8px;">📚</div>
+            <div class="hcard-stat">ICSE</div>
+            <div class="hcard-label">Affiliated School</div>
+            <div class="hcard-desc">"Excellence in academics"</div>
+          </div>
+          <div class="hcard hcard-float hcard-float-1">
+            <div style="font-size:22px;">🌟</div>
+            <div class="hcard-stat" style="font-size:22px;">Top</div>
+            <div class="hcard-label" style="font-size:10px;">School Coimbatore</div>
+          </div>
+          <div class="hcard hcard-float hcard-float-2">
+            <div style="font-size:22px;">🤝</div>
+            <div class="hcard-stat" style="font-size:22px;">10K+</div>
+            <div class="hcard-label" style="font-size:10px;">Alumni Network</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <button class="hero-arrow hero-arrow-left" onclick="changeSlide(-1)">←</button>
+  <button class="hero-arrow hero-arrow-right" onclick="changeSlide(1)">→</button>
+  <div class="hero-controls">
+    <button class="hero-dot" onclick="goToSlide(0)"></button>
+    <button class="hero-dot active" onclick="goToSlide(1)"></button>
+    <button class="hero-dot" onclick="goToSlide(2)"></button>
+  </div>
+  <div class="hero-ribbon"></div>
+</section>
+
+<!-- ░░░ STATS BAR ░░░ -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item reveal visible">
+      <div class="stat-icon si-purple">🎓</div>
+      <div class="stat-body">
+        <div class="stat-num">15+</div>
+        <div class="stat-label">Years of Excellence</div>
+      </div>
+    </div>
+    <div class="stat-item reveal rd1 visible">
+      <div class="stat-icon si-olive">👩‍🎓</div>
+      <div class="stat-body">
+        <div class="stat-num">1,500</div>
+        <div class="stat-label">Students Enrolled</div>
+      </div>
+    </div>
+    <div class="stat-item reveal rd2 visible">
+      <div class="stat-icon si-gold">🏆</div>
+      <div class="stat-body">
+        <div class="stat-num">100%</div>
+        <div class="stat-label">Board Pass Rate</div>
+      </div>
+    </div>
+    <div class="stat-item reveal rd3 visible">
+      <div class="stat-icon si-lav">🤝</div>
+      <div class="stat-body">
+        <div class="stat-num">10,000+</div>
+        <div class="stat-label">Alumni Worldwide</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ░░░ MARQUEE ░░░ -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span class="mq-item">Academic Excellence</span><span class="mq-item">ICSE Affiliation</span>
+    <span class="mq-item">Holistic Development</span><span class="mq-item">Smart Classrooms</span>
+    <span class="mq-item">Sports &amp; Athletics</span><span class="mq-item">Creative Arts</span>
+    <span class="mq-item">Science &amp; Technology</span><span class="mq-item">Character Building</span>
+    <span class="mq-item">Global Perspective</span><span class="mq-item">Joyful Learning</span>
+    <!-- dupe for seamless scroll -->
+    <span class="mq-item">Academic Excellence</span><span class="mq-item">ICSE Affiliation</span>
+    <span class="mq-item">Holistic Development</span><span class="mq-item">Smart Classrooms</span>
+    <span class="mq-item">Sports &amp; Athletics</span><span class="mq-item">Creative Arts</span>
+    <span class="mq-item">Science &amp; Technology</span><span class="mq-item">Character Building</span>
+    <span class="mq-item">Global Perspective</span><span class="mq-item">Joyful Learning</span>
+  </div>
+</div>
+
+<!-- ░░░ WELCOME / ABOUT ░░░ -->
+<section class="welcome section" id="about">
+  <div class="container">
+    <div class="welcome-grid">
+
+      <!-- Image Collage -->
+      <div class="welcome-collage reveal visible">
+        <div class="wc-img wc-main">
+          <div class="ph ph-a" style="height:100%;font-size:72px;opacity:.5;">🎓</div>
+        </div>
+        <div class="wc-img wc-top">
+          <div class="ph ph-b" style="height:100%;font-size:52px;opacity:.5;">📚</div>
+        </div>
+        <div class="wc-img wc-bot">
+          <div class="ph ph-c" style="height:100%;font-size:52px;opacity:.5;">🔬</div>
+        </div>
+        <div class="wc-badge">
+          <div class="wc-badge-num">Est. 1997</div>
+          <div class="wc-badge-txt">A Legacy of Learning</div>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="welcome-body reveal rd1 visible">
+        <div class="olive-strip">
+          <div class="olive-strip-dot"></div>
+          <span class="olive-strip-text">Admissions Open 2025 – 2026</span>
+        </div>
+        <div class="eyebrow">Our Story</div>
+        <h2 class="section-title">Welcome to<br>Dr. Dasarathan<br><em>International School!</em></h2>
+        <div class="credo">Inspire · Explore · Excel</div>
+        <p class="welcome-text">
+          Students at Dr. DIS are nurtured to be well-educated and disciplined citizens. We accomplish this by providing rich and holistic education with beautiful, sweeping facilities. We ensure our students are engaged appropriately to tackle challenges through joyful learning. We offer a research-based curriculum that emphasises a strong foundation in literacy as well as critical thinking, leadership, and bounty opportunities for creative manifestation.
+        </p>
+        <div class="value-grid">
+          <div class="value-card">
+            <div class="value-icon">🌱</div>
+            <div class="value-name">Holistic Nurturing</div>
+            <div class="value-desc">Mind, body, and spirit in harmony.</div>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">🔭</div>
+            <div class="value-name">Inquiry Learning</div>
+            <div class="value-desc">Curiosity-driven, research-based pedagogy.</div>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">🤝</div>
+            <div class="value-name">Community Values</div>
+            <div class="value-desc">Respect, integrity, and compassion.</div>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">🌍</div>
+            <div class="value-name">Global Outlook</div>
+            <div class="value-desc">Preparing citizens of tomorrow's world.</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;">
+          <a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#" class="btn-primary">Read More</a>
+          <a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#contact" class="btn-outline">Book a Tour</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░░ ANNOUNCEMENTS + EVENTS + CIRCULARS ░░░ -->
+<section class="updates" id="events">
+  <div class="container">
+    <div class="reveal visible" style="text-align:center;">
+      <div class="eyebrow" style="justify-content:center;">Latest Updates</div>
+      <h2 class="section-title" style="margin:0 auto;">School <em>Announcements</em>, Events &amp; Circulars</h2>
+    </div>
+    <div class="updates-grid">
+
+      <!-- Announcements -->
+      <div class="update-panel reveal rd1 visible">
+        <div class="update-head">
+          <div class="update-head-icon uhi-purple">📢</div>
+          <div class="update-head-title">School Announcements</div>
+        </div>
+        <div class="update-body">
+          <div class="ann-item">
+            <div class="ann-dot"></div>
+            <div>
+              <div class="ann-text">Admissions are open for 2025–2026 across all grades. Limited seats available.</div>
+              <span class="ann-badge">New</span>
+            </div>
+          </div>
+          <div class="ann-item">
+            <div class="ann-dot"></div>
+            <div>
+              <div class="ann-text">Annual Sports Day scheduled for 15th February 2025. All students to participate.</div>
+            </div>
+          </div>
+          <div class="ann-item">
+            <div class="ann-dot"></div>
+            <div>
+              <div class="ann-text">Parent-Teacher Meeting (PTM) for Grades 6–10 on 22nd February 2025.</div>
+            </div>
+          </div>
+          <div class="ann-item">
+            <div class="ann-dot"></div>
+            <div>
+              <div class="ann-text">School will remain closed on 26th January 2025 – Republic Day holiday.</div>
+            </div>
+          </div>
+        </div>
+        <div class="update-foot">
+          <a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#" class="view-all-link">View All Announcements →</a>
+        </div>
+      </div>
+
+      <!-- Recent Events -->
+      <div class="update-panel reveal rd2 visible">
+        <div class="update-head">
+          <div class="update-head-icon uhi-olive">🎉</div>
+          <div class="update-head-title">Recent Events</div>
+        </div>
+        <div class="update-body">
+          <div class="event-item">
+            <div class="event-thumb ph-a">🎄</div>
+            <div class="event-info">
+              <div class="event-name">Christmas Celebration</div>
+              <div class="event-date">December 24, 2024</div>
+            </div>
+          </div>
+          <div class="event-item">
+            <div class="event-thumb ph-b">🎡</div>
+            <div class="event-info">
+              <div class="event-name">Summer Carnival</div>
+              <div class="event-date">May 18, 2024</div>
+            </div>
+          </div>
+          <div class="event-item">
+            <div class="event-thumb ph-c">💡</div>
+            <div class="event-info">
+              <div class="event-name">Youth Skills Day</div>
+              <div class="event-date">June 15, 2024</div>
+            </div>
+          </div>
+          <div class="event-item">
+            <div class="event-thumb ph-d">🏅</div>
+            <div class="event-info">
+              <div class="event-name">Science Olympiad Win</div>
+              <div class="event-date">March 2, 2025</div>
+            </div>
+          </div>
+        </div>
+        <div class="update-foot">
+          <a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#" class="view-all-link">View All Events →</a>
+        </div>
+      </div>
+
+      <!-- School Circulars -->
+      <div class="update-panel reveal rd3 visible">
+        <div class="update-head">
+          <div class="update-head-icon uhi-lav">📋</div>
+          <div class="update-head-title">School Circulars</div>
+        </div>
+        <div class="update-body">
+          <a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#" class="circ-item">
+            <div class="circ-icon">📄</div>
+            <div class="circ-text">Class XII Biology Practice Question Paper</div>
+          </a>
+          <a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#" class="circ-item">
+            <div class="circ-icon">📄</div>
+            <div class="circ-text">Class X Practice Question Paper – March 2025</div>
+          </a>
+          <a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#" class="circ-item">
+            <div class="circ-icon">📅</div>
+            <div class="circ-text">January 2025 Monthly Circular</div>
+          </a>
+          <a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#" class="circ-item">
+            <div class="circ-icon">📅</div>
+            <div class="circ-text">February 2025 Examination Schedule</div>
+          </a>
+          <a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#" class="circ-item">
+            <div class="circ-icon">📅</div>
+            <div class="circ-text">March 2025 Holiday &amp; Events List</div>
+          </a>
+        </div>
+        <div class="update-foot">
+          <a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#" class="view-all-link">View All Circulars →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ░░░ ACADEMICS / PROGRAMMES ░░░ -->
+<section class="academics section" id="academics">
+  <div class="container">
+    <div class="academics-header reveal visible">
+      <div>
+        <div class="eyebrow">Programmes</div>
+        <h2 class="section-title">Academic <em>Excellence</em><br>at Every Stage</h2>
+      </div>
+      <a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#" class="btn-outline">View Academic Calendar</a>
+    </div>
+    <div class="prog-grid">
+      <div class="prog-card reveal visible">
+        <div class="prog-card-bg pc-bg-1"></div>
+        <div class="prog-card-overlay"></div>
+        <div class="prog-card-content">
+          <div class="prog-icon">🌸</div>
+          <div class="prog-age">Ages 3–5 • Pre-Primary</div>
+          <div class="prog-name">Early Childhood Education</div>
+          <div class="prog-desc">Play-based, sensory learning that builds curiosity and a love for discovery.</div>
+          <div class="prog-arrow">Explore Programme →</div>
+        </div>
+      </div>
+      <div class="prog-card reveal rd1 visible">
+        <div class="prog-card-bg pc-bg-2"></div>
+        <div class="prog-card-overlay"></div>
+        <div class="prog-card-content">
+          <div class="prog-icon">📖</div>
+          <div class="prog-age">Ages 6–10 • Grades 1–5</div>
+          <div class="prog-name">Primary School</div>
+          <div class="prog-desc">Core academics fused with creative arts and character development.</div>
+          <div class="prog-arrow">Explore Programme →</div>
+        </div>
+      </div>
+      <div class="prog-card reveal rd2 visible">
+        <div class="prog-card-bg pc-bg-3"></div>
+        <div class="prog-card-overlay"></div>
+        <div class="prog-card-content">
+          <div class="prog-icon">🔭</div>
+          <div class="prog-age">Ages 11–13 • Grades 6–8</div>
+          <div class="prog-name">Middle School</div>
+          <div class="prog-desc">Critical thinking, leadership skills, and expanding academic horizons.</div>
+          <div class="prog-arrow">Explore Programme →</div>
+        </div>
+      </div>
+      <div class="prog-card reveal rd3 visible">
+        <div class="prog-card-bg pc-bg-4"></div>
+        <div class="prog-card-overlay"></div>
+        <div class="prog-card-content">
+          <div class="prog-icon">🚀</div>
+          <div class="prog-age">Ages 14–17 • Grades 9–12</div>
+          <div class="prog-name">High School (ICSE)</div>
+          <div class="prog-desc">Rigorous board preparation with a focus on college readiness and career pathways.</div>
+          <div class="prog-arrow">Explore Programme →</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░░ CO-CURRICULAR ░░░ -->
+<section class="cocurr section" id="cocurr">
+  <div class="container">
+    <div class="cocurr-intro reveal visible">
+      <div class="eyebrow">Beyond Books</div>
+      <h2 class="section-title">Co-Curricular <em>Activities</em></h2>
+      <p class="section-lead">We believe that a truly rounded education happens as much outside the classroom as within it. Our co-curricular programme offers every student a stage to shine.</p>
+    </div>
+    <div class="activity-grid">
+      <div class="activity-card reveal visible">
+        <div class="ac-icon-wrap aci-olive">⚽</div>
+        <div class="ac-title">Sports &amp; Athletics</div>
+        <div class="ac-desc">State-of-the-art grounds and professional coaching in cricket, football, basketball, kabaddi, athletics, and more.</div>
+        <div class="ac-tags">
+          <span class="ac-tag">Cricket</span>
+          <span class="ac-tag">Football</span>
+          <span class="ac-tag">Basketball</span>
+          <span class="ac-tag">Kabaddi</span>
+        </div>
+      </div>
+      <div class="activity-card reveal rd1 visible">
+        <div class="ac-icon-wrap aci-lav">🎭</div>
+        <div class="ac-title">Performing Arts</div>
+        <div class="ac-desc">Drama, classical &amp; folk dance, music, and public speaking — discovering voice through creative expression.</div>
+        <div class="ac-tags">
+          <span class="ac-tag">Drama</span>
+          <span class="ac-tag">Dance</span>
+          <span class="ac-tag">Music</span>
+          <span class="ac-tag">Elocution</span>
+        </div>
+      </div>
+      <div class="activity-card reveal rd2 visible">
+        <div class="ac-icon-wrap aci-gold">🎨</div>
+        <div class="ac-title">Visual Arts &amp; Craft</div>
+        <div class="ac-desc">Painting, sketching, pottery, and crafts that build aesthetic sensibility and fine motor creativity.</div>
+        <div class="ac-tags">
+          <span class="ac-tag">Painting</span>
+          <span class="ac-tag">Craft</span>
+          <span class="ac-tag">Pottery</span>
+        </div>
+      </div>
+      <div class="activity-card reveal visible">
+        <div class="ac-icon-wrap aci-lav">💻</div>
+        <div class="ac-title">Technology &amp; Robotics</div>
+        <div class="ac-desc">MindBox Lab, coding clubs, robotics workshops, and STEM challenges preparing innovators for tomorrow.</div>
+        <div class="ac-tags">
+          <span class="ac-tag">Coding</span>
+          <span class="ac-tag">Robotics</span>
+          <span class="ac-tag">STEM</span>
+        </div>
+      </div>
+      <div class="activity-card reveal rd1 visible">
+        <div class="ac-icon-wrap aci-olive">🥋</div>
+        <div class="ac-title">Martial Arts</div>
+        <div class="ac-desc">Karate training that builds discipline, focus, confidence, and physical fitness in a structured environment.</div>
+        <div class="ac-tags">
+          <span class="ac-tag">Karate</span>
+          <span class="ac-tag">Self-Defense</span>
+        </div>
+      </div>
+      <div class="activity-card reveal rd2 visible">
+        <div class="ac-icon-wrap aci-gold">📚</div>
+        <div class="ac-title">Literary Clubs</div>
+        <div class="ac-desc">Debate, quiz, creative writing, and journalism clubs that sharpen language and analytical thinking.</div>
+        <div class="ac-tags">
+          <span class="ac-tag">Debate</span>
+          <span class="ac-tag">Quiz</span>
+          <span class="ac-tag">Writing</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░░ FACILITIES ░░░ -->
+<section class="facilities section" id="facilities">
+  <div class="container">
+    <div class="facilities-lead reveal visible">
+      <div class="eyebrow">Campus &amp; Infrastructure</div>
+      <h2 class="section-title">World-Class <em>Facilities</em></h2>
+      <p class="section-lead">Every corner of our campus is thoughtfully designed to provide the best environment for learning, growth, and wellbeing.</p>
+    </div>
+    <div class="fac-mosaic reveal visible">
+      <div class="fac-tile wide">
+        <div class="fac-tile-bg ftbg1">🏫</div>
+        <div class="fac-overlay"><span class="fac-label">Smart Classrooms</span></div>
+      </div>
+      <div class="fac-tile">
+        <div class="fac-tile-bg ftbg2">🔬</div>
+        <div class="fac-overlay"><span class="fac-label">Science Labs</span></div>
+      </div>
+      <div class="fac-tile">
+        <div class="fac-tile-bg ftbg3">💻</div>
+        <div class="fac-overlay"><span class="fac-label">MindBox Lab</span></div>
+      </div>
+      <div class="fac-tile tall">
+        <div class="fac-tile-bg ftbg4">⚽</div>
+        <div class="fac-overlay"><span class="fac-label">Sports Grounds</span></div>
+      </div>
+      <div class="fac-tile">
+        <div class="fac-tile-bg ftbg5">📚</div>
+        <div class="fac-overlay"><span class="fac-label">Library</span></div>
+      </div>
+      <div class="fac-tile">
+        <div class="fac-tile-bg ftbg6">🍽️</div>
+        <div class="fac-overlay"><span class="fac-label">Modern Canteen</span></div>
+      </div>
+      <div class="fac-tile">
+        <div class="fac-tile-bg ftbg7">🚌</div>
+        <div class="fac-overlay"><span class="fac-label">School Bus Fleet</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░░ MESSAGES ░░░ -->
+<section class="messages section" id="messages">
+  <div class="container">
+    <div class="mo1 msg-orb"></div>
+    <div class="mo2 msg-orb"></div>
+    <div style="text-align:center;margin-bottom:52px;" class="reveal visible">
+      <div class="eyebrow" style="color:var(--gold-pale);justify-content:center;">
+        <span style="background:var(--gold);width:24px;height:1px;display:inline-block;"></span>
+        Words from Leadership
+      </div>
+      <h2 class="section-title" style="color:#fff;">Messages from Our <em style="color:var(--gold-pale);">Leadership</em></h2>
+    </div>
+    <div class="msg-grid">
+      <div class="msg-card reveal visible">
+        <div class="msg-avatar ma-gold">👨‍💼</div>
+        <div class="msg-role">Management</div>
+        <div class="msg-name">Dr. Dasarathan</div>
+        <div class="msg-quote">Our vision has always been to create an institution where every child feels valued, every talent is celebrated, and every dream is given the nourishment it deserves.</div>
+        <a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#" class="msg-readmore">Read Full Message →</a>
+      </div>
+      <div class="msg-card reveal rd1 visible">
+        <div class="msg-avatar ma-lav">👩‍💼</div>
+        <div class="msg-role">Correspondent</div>
+        <div class="msg-name">The Correspondent</div>
+        <div class="msg-quote">Education is not merely the transfer of knowledge but the kindling of a flame — a passion for inquiry that will sustain our students through every challenge life presents.</div>
+        <a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#" class="msg-readmore">Read Full Message →</a>
+      </div>
+      <div class="msg-card reveal rd2 visible">
+        <div class="msg-avatar ma-olive">🎓</div>
+        <div class="msg-role">Principal</div>
+        <div class="msg-name">The Principal</div>
+        <div class="msg-quote">I am proud to lead a school where our teachers inspire not just learning but love for learning — and where every student walks out ready to make their mark on the world.</div>
+        <a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#" class="msg-readmore">Read Full Message →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░░ TESTIMONIALS ░░░ -->
+<section class="testimonials section" id="testimonials">
+  <div class="container">
+    <div style="text-align:center;max-width:520px;margin:0 auto 0;" class="reveal visible">
+      <div class="eyebrow" style="justify-content:center;">Testimonials</div>
+      <h2 class="section-title">What Our <em>Community</em> Says</h2>
+    </div>
+    <div class="testi-scroll">
+      <div class="testi-card reveal visible">
+        <div class="testi-stars">★★★★★</div>
+        <span class="testi-mark">"</span>
+        <p class="testi-text">The teachers here are exceptional — they truly know every child by name and by nature. My son has blossomed into a confident, curious learner. We could not have chosen better.</p>
+        <div class="testi-author">
+          <div class="tav tav-a">👩</div>
+          <div>
+            <div class="t-name">Priya Sundaram</div>
+            <div class="t-role">Parent · Grade 8 Student</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal rd1 visible">
+        <div class="testi-stars">★★★★★</div>
+        <span class="testi-mark">"</span>
+        <p class="testi-text">Dr. DIS gave me the foundation, the confidence, and the drive to pursue IIT. The school's belief in me when I doubted myself is something I will carry forever.</p>
+        <div class="testi-author">
+          <div class="tav tav-b">👨</div>
+          <div>
+            <div class="t-name">Arjun Krishnan</div>
+            <div class="t-role">Alumni · Class of 2023</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal rd2 visible">
+        <div class="testi-stars">★★★★★</div>
+        <span class="testi-mark">"</span>
+        <p class="testi-text">From the moment we visited, we knew this was a place that genuinely cares. The holistic approach, the values, the warmth of every teacher — it sets Dr. DIS apart entirely.</p>
+        <div class="testi-author">
+          <div class="tav tav-c">👩</div>
+          <div>
+            <div class="t-name">Meena Raghavan</div>
+            <div class="t-role">Parent · Grades 4 &amp; 6</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░░ ADMISSIONS CTA ░░░ -->
+<section class="admissions-cta" id="admissions">
+  <div class="admissions-inner">
+    <div class="reveal visible">
+      <div class="adm-eyebrow">Admissions 2025 – 2026</div>
+      <h2 class="adm-title">Begin Your Child's<br><em>Extraordinary</em> Journey</h2>
+      <p class="adm-desc">Applications are now open for the academic year 2025–26 across all grades from Pre-KG to Grade 12. Limited seats available — register your interest today.</p>
+    </div>
+    <div class="adm-actions reveal rd2 visible">
+      <a href="https://www.dasarathanschool.com/admission/" class="btn-gold">Apply for Admission</a>
+      <a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#contact" class="btn-white-out">Book a School Visit</a>
+    </div>
+  </div>
+</section>
+
+<!-- ░░░ BLOG ░░░ -->
+<section class="blog section" id="blog">
+  <div class="container">
+    <div class="blog-header reveal visible">
+      <div>
+        <div class="eyebrow">Latest</div>
+        <h2 class="section-title">News &amp; <em>Blog</em></h2>
+      </div>
+      <a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#" class="btn-outline">View All Posts</a>
+    </div>
+    <div class="blog-grid">
+      <div class="blog-card featured reveal visible">
+        <div class="blog-thumb">
+          <div class="ph ph-a bt-main" style="font-size:72px;">🏅</div>
+        </div>
+        <div class="blog-body">
+          <div class="blog-cat">Achievement</div>
+          <div class="blog-title">Our Students Sweep Gold at the Tamil Nadu State Science Olympiad 2025</div>
+          <p class="blog-excerpt">A proud moment for the Dr. DIS community — five gold medals and two special recognitions brought home by our brilliant young scientists.</p>
+          <div class="blog-meta">
+            <span class="blog-date">March 2, 2025</span>
+            <span class="blog-tag">Science</span>
+          </div>
+        </div>
+      </div>
+      <div class="blog-card reveal rd1 visible">
+        <div class="blog-thumb">
+          <div class="ph ph-b bt-sm" style="font-size:52px;">🎭</div>
+        </div>
+        <div class="blog-body">
+          <div class="blog-cat">Events</div>
+          <div class="blog-title">Annual Day: A Spectacular Evening of Talent</div>
+          <p class="blog-excerpt">Over 600 students performed in a breathtaking evening of music, dance, and drama.</p>
+          <div class="blog-meta">
+            <span class="blog-date">Feb 18, 2025</span>
+            <span class="blog-tag">Annual Day</span>
+          </div>
+        </div>
+      </div>
+      <div class="blog-card reveal rd2 visible">
+        <div class="blog-thumb">
+          <div class="ph ph-c bt-sm" style="font-size:52px;">🌱</div>
+        </div>
+        <div class="blog-body">
+          <div class="blog-cat">Community</div>
+          <div class="blog-title">Green School Drive: 1,000 Trees Planted This Month</div>
+          <p class="blog-excerpt">Students and teachers unite for our annual environmental mission, planting saplings across the campus.</p>
+          <div class="blog-meta">
+            <span class="blog-date">Jan 30, 2025</span>
+            <span class="blog-tag">Environment</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░░ CONTACT ░░░ -->
+<section class="contact section" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info reveal visible">
+        <div class="eyebrow">Get in Touch</div>
+        <h2 class="section-title">We'd Love to<br><em>Hear from You</em></h2>
+        <p class="section-lead" style="margin-bottom:0;">Whether you have questions about admissions, want to schedule a campus visit, or simply wish to know more — our team is here for you.</p>
+        <div class="contact-cards">
+          <div class="contact-card">
+            <div class="cc-icon cc-purple">📞</div>
+            <div>
+              <div class="cc-label">Phone</div>
+              <div class="cc-value"><a href="tel:+919489663338">+91 9489663338</a></div>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="cc-icon cc-olive">✉️</div>
+            <div>
+              <div class="cc-label">Email</div>
+              <div class="cc-value"><a href="mailto:drdasarathanintschool@gmail.com">drdasarathanintschool@gmail.com</a></div>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="cc-icon cc-lav">📍</div>
+            <div>
+              <div class="cc-label">Address</div>
+              <div class="cc-value">Jangamanaicken Palayam, Thoppampatti Pirivu,<br>Coimbatore – 641017, Tamil Nadu</div>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="cc-icon cc-purple">🕐</div>
+            <div>
+              <div class="cc-label">Office Hours</div>
+              <div class="cc-value">Monday – Saturday: 8:00 AM – 5:00 PM</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="map-panel reveal rd2 visible">
+        <div class="map-placeholder">
+          <div class="map-placeholder-icon">📍</div>
+          <div class="map-placeholder-text">Dr. Dasarathan International School, Coimbatore</div>
+          <a href="https://www.google.com/maps/place/Dr.Dasarathan+International+School/data=!4m7!3m6!1s0x3ba8f6647110c4d3:0x793259a7efcc58e0!8m2!3d11.0966753!4d76.9337355!16s%2Fg%2F1tkb3k2s!19sChIJ08QQcWT2qDsR4FjM76dZMnk?authuser=0&amp;hl=en&amp;rclk=1" target="_blank" class="btn-directions">Open in Google Maps</a>
+        </div>
+        <div class="map-footer">
+          <div class="map-address">
+            Thoppampatti Pirivu,<br>
+            Jangamanaicken Palayam,<br>
+            Coimbatore – 641017
+          </div>
+          <a href="https://maps.google.com/?q=Jangamanaicken+Palayam+Coimbatore" target="_blank" class="btn-directions">Get Directions</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░░ FOOTER ░░░ -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo-name">Dr. Dasarathan International School</div>
+      <span class="footer-tagline">Inspire · Explore · Excel</span>
+      <p class="footer-brand-desc">Nurturing well-educated, disciplined, and compassionate citizens since 1997 through rich, holistic education in the heart of Coimbatore.</p>
+      <div class="footer-social">
+        <a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#" class="fsoc" title="Facebook">f</a>
+        <a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#" class="fsoc" title="Instagram">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="5"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor"></circle></svg>
+        </a>
+        <a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#" class="fsoc" title="YouTube">▶</a>
+        <a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#" class="fsoc" title="Twitter">𝕏</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>About Us</h5>
+      <ul>
+        <li><a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#">About Us</a></li>
+        <li><a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#">Vision &amp; Mission</a></li>
+        <li><a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#">Management</a></li>
+        <li><a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#">Management Message</a></li>
+        <li><a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#">Principal Message</a></li>
+        <li><a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#">Testimonials</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Academics</h5>
+      <ul>
+        <li><a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#">Academic Overview</a></li>
+        <li><a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#">Circular</a></li>
+        <li><a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#">Examination Dates</a></li>
+        <li><a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#">List of Holidays</a></li>
+        <li><a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#">Co-Curricular</a></li>
+        <li><a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#">Facilities</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Quick Links</h5>
+      <ul>
+        <li><a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#">Admission 2025–26</a></li>
+        <li><a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#">Events</a></li>
+        <li><a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#">Blog</a></li>
+        <li><a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#">Careers</a></li>
+        <li><a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#">Contact Us</a></li>
+        <li><a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2025 Dr. Dasarathan International School. All rights reserved. | Coimbatore, Tamil Nadu</span>
+    <div class="footer-links">
+      <a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#">Privacy Policy</a>
+      <a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#">Terms of Use</a>
+      <a href="file:///C:/Users/BMRMf/Downloads/dasarathan-school-v2.html#">Sitemap</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ░░░ JAVASCRIPT ░░░ -->
+<script>
+/* ── SLIDER ── */
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+const dots = document.querySelectorAll('.hero-dot');
+let autoTimer;
+
+function goToSlide(n) {
+  slides[currentSlide].classList.remove('active');
+  dots[currentSlide].classList.remove('active');
+  currentSlide = (n + slides.length) % slides.length;
+  slides[currentSlide].classList.add('active');
+  dots[currentSlide].classList.add('active');
+}
+
+function changeSlide(dir) {
+  clearInterval(autoTimer);
+  goToSlide(currentSlide + dir);
+  startAuto();
+}
+
+function startAuto() {
+  autoTimer = setInterval(() => goToSlide(currentSlide + 1), 6000);
+}
+startAuto();
+
+/* ── NAV SCROLL ── */
+window.addEventListener('scroll', () => {
+  document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 10);
+});
+
+/* ── SCROLL REVEAL ── */
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+  });
+}, { threshold: 0.1 });
+revealEls.forEach(el => io.observe(el));
+
+/* ── HAMBURGER ── */
+function toggleBurger() {
+  const spans = document.querySelectorAll('#burger span');
+  document.getElementById('burger').classList.toggle('open');
+  const open = document.getElementById('burger').classList.contains('open');
+  spans[0].style.transform = open ? 'rotate(45deg) translate(5px,5px)' : '';
+  spans[1].style.opacity  = open ? '0' : '';
+  spans[2].style.transform = open ? 'rotate(-45deg) translate(5px,-5px)' : '';
+}
+
+/* ── SMOOTH ANCHOR ── */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const id = a.getAttribute('href');
+    if (id.length > 1) {
+      const el = document.querySelector(id);
+      if (el) { e.preventDefault(); el.scrollIntoView({ behavior: 'smooth' }); }
+    }
+  });
+});
+</script>
+
+
+</body></html>
